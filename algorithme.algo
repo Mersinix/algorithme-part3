@@ -1,0 +1,55 @@
+PROCEDURE read_vectors(n:INTEGER, VAR v1,v2:ARRAY_OF INTEGER[2])
+VAR
+    i,j:INTEGER
+BEGIN
+    FOR i FROM 0 TO n-1   DO
+        read(v1[i]);
+    END_FOR
+    FOR j FROM 0 TO n-1   DO
+        read(v2[j]);
+    END_FOR
+END
+
+PROCEDURE sum_2_vectors(n:INTEGER, VAR v1,v2:ARRAY_OF INTEGER)
+VAR
+    i,j,sum:INTEGER
+BEGIN
+    FOR i FROM 0 TO n-1   DO
+        sum := sum + v1[i] * v2[j];
+    END_FOR
+END
+
+
+
+PROCEDURE write_vectors(n:INTEGER, v1,v2:ARRAY_OF INTEGER)
+VAR
+    i,j,sum:INTEGER
+BEGIN
+    IF (sum == 0) THEN
+        write("the vectors are orthogonals");
+    ELSE
+        write("the vectors are not orthogonals");
+    END_IF      
+END
+
+
+
+ALGORITHM Vectors
+VAR
+    nbr:= INTEGER
+    v1,v2 := array_name : ARRAY_OF INTEGER [2];
+BEGIN
+    //number of pair vectors
+    read (nbr); 
+    
+    FOR i FROM 1 TO nbr  DO
+        // read vectors
+        read_vectors(n,v1,v2);
+        // dot product vectors
+        sum_2_vectors(n,v1,v2);
+        // display vectors
+        write_vectors(n,v1,v2);
+
+    END_FOR
+
+END
